@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matthew Wright — Full-Stack Developer & UI Designer based in the Midlands, UK. Building websites, e-commerce stores, backends and interactive interfaces." />
+  <title>Matthew Wright — Full-Stack Developer & UI Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">MW</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Work</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="scroll-line" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Full-Stack Developer &amp; UI Designer — Midlands, UK</p>
+      <h1 class="hero-title">
+        Matthew<br />
+        <span>Wright</span>
+      </h1>
+      <div class="hero-sub">
+        <p class="hero-desc">I build websites, e-commerce stores and backends — and design interfaces people actually enjoy using.</p>
+        <a href="#projects" class="hero-cta">View Work →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">About</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="about-heading">Design Meets<br />Development</h2>
+      </div>
+      <div>
+        <p class="about-text">I create websites, e-commerce stores, and robust backends — as well as interactive user interfaces that look as good as they perform. Whether it's a Shopify store or a bespoke full-stack build, I bring both technical depth and design thinking to every project.</p>
+        <div class="skills-grid">
+          <span class="skill-tag">WooCommerce</span>
+          <span class="skill-tag">Shopify</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">Full</span>
+        <p class="stat-label">Stack Development</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">UI</span>
+        <p class="stat-label">Interface Design</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">E-COM</span>
+        <p class="stat-label">Store Builds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Selected Work</p>
+
+    <!-- Featured Project -->
+    <a href="https://marletclo.com" target="_blank" rel="noopener noreferrer" class="project-main">
+      <div class="project-img">
+        <!--
+          REPLACE THIS:
+          Swap the src below with your actual Marlét Clo screenshot.
+          Save your screenshot as "marlet-clo.jpg" in the same folder as index.html
+          then change the src to: src="marlet-clo.jpg"
+        -->
+        <img
+          src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=1200&q=80"
+          alt="Marlét Clo — Luxury streetwear Shopify store"
+          loading="lazy"
+        />
+      </div>
+      <div class="project-info">
+        <p class="project-num">01 / Featured</p>
+        <h3 class="project-name">Marlét Clo</h3>
+        <p class="project-desc">Luxury streetwear brand — debut headwear capsule drop with a dark, minimal, high-end aesthetic. Full Shopify store build with a bespoke theme tailored to the brand's identity.</p>
+        <div class="project-tags">
+          <span class="project-tag">Shopify</span>
+          <span class="project-tag">E-Commerce</span>
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">CSS</span>
+        </div>
+        <span class="project-link">Visit Site →</span>
+      </div>
+    </a>
+
+    <!-- More Work Callout -->
+    <div class="more-work-banner">
+      <div class="more-work-text">
+        <p class="more-work-tag">More Work Available</p>
+        <h3 class="more-work-heading">Got a project in mind?<br />I've got more to show you.</h3>
+        <p class="more-work-desc">Not everything I've built is live online. Get in touch and I'll happily walk you through templates, UI designs and past builds that aren't publicly hosted.</p>
+      </div>
+      <a href="#contact" class="more-work-cta">Get In Touch →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-heading">Let's Work<br />Together</h2>
+        <p class="contact-note">Prefer to be contacted by message where possible.</p>
+      </div>
+      <div class="contact-items">
+        <div class="contact-row">
+          <span class="contact-type">Phone</span>
+          <a href="tel:07455840231" class="contact-val">07455 840 231</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-type">Email</span>
+          <a href="mailto:matthew.s.wright2727@gmail.com" class="contact-val">matthew.s.wright2727@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Matthew Wright</span>
+    <span class="footer-copy">© 2025 matthewwright.studio</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
