@@ -782,6 +782,16 @@ footer {
     border-bottom: none;
   }
 
+  .service-item {
+    grid-template-columns: 36px 1fr;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.4rem;
+  }
+
   footer {
     padding: 1.5rem 2rem;
     flex-direction: column;
@@ -833,7 +843,7 @@ footer {
 
 /* =====================
    SERVICES
-===================== *//
+===================== */
 #services {
   border-top: 1px solid var(--border);
 }
