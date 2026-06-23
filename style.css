@@ -765,24 +765,28 @@ footer {
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .service-item {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 0.75rem;
     padding: 2rem 1.5rem;
   }
 
+  .service-item:nth-child(2n) {
+    border-right: none !important;
+  }
+
   .service-item:nth-last-child(-n+2) {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border) !important;
   }
 
   .service-item:last-child {
-    border-bottom: none;
+    border-bottom: none !important;
   }
 
   .service-num {
