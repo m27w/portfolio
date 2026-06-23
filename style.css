@@ -771,7 +771,10 @@ footer {
   .service-item {
     border-right: none;
     border-bottom: 1px solid var(--border);
-    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2rem 1.5rem;
   }
 
   .service-item:nth-last-child(-n+2) {
@@ -782,10 +785,8 @@ footer {
     border-bottom: none;
   }
 
-  .service-item {
-    grid-template-columns: 36px 1fr;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
+  .service-num {
+    font-size: 0.75rem;
   }
 
   .service-title {
