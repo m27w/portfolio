@@ -12,10 +12,12 @@
 - UI design £300–£600, monthly maintenance £100–£250/mo
 
 ## Work
-- Marlét Clo: luxury streetwear Shopify store — https://matthewwright.studio/marlet-clo.html
+- Marlét Clo: own brand luxury streetwear Shopify store — https://matthewwright.studio/marlet-clo.html
+- Strand: own product training OS (mystrand.app) — launching soon — https://matthewwright.studio/strand.html
 - Forma Studio: architecture website demo — not a live client brand
 
 ## Pages
 - [Home](https://matthewwright.studio/)
 - [Services & pricing](https://matthewwright.studio/services.html)
 - [Marlét Clo case study](https://matthewwright.studio/marlet-clo.html)
+- [Strand case study](https://matthewwright.studio/strand.html)

@@ -16,3 +16,6 @@
 
 ## 2026-09-09 (Marlét hero)
 - Replaced Marlét hero/card image with higher-res Capsule 002 live storefront crop (jpg + webp).
+
+## 2026-09-09 (Strand)
+- Added Strand (mystrand.app) as own-product Selected Work card + `strand.html` case study (launching soon). Sitemap + llms updated.
