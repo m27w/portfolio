@@ -404,6 +404,37 @@
       .cs-stack-item:last-child { border-bottom: none !important; }
       .cs-meta-row { gap: 1.5rem; }
     }
+
+    .cs-live-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .cs-live-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--grey);
+    }
+    .cs-live-card picture,
+    .cs-live-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .cs-live-cap {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 900px) {
+      .cs-live-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
   <script type="application/ld+json">
 {
@@ -619,6 +650,46 @@
     </div>
   </div>
 
+
+  <div class="cs-divider"></div>
+
+  <!-- LIVE STORE -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Live now</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">Capsule 002 on marletclo.com</h2>
+        <p class="cs-body">Current storefront frames from the live Shopify build — Capsule 002 shirts with bundle pricing, brand value props, and Capsule 001 Essentials still listed. No restocks; designed in the UK.</p>
+        <div class="cs-live-grid">
+          <figure class="cs-live-card">
+            <picture>
+              <source srcset="marlet-live-capsule.webp" type="image/webp" />
+              <img src="marlet-live-capsule.jpg" alt="Capsule 002 products on the live Marlét Clo Shopify store" width="1024" height="720" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption class="cs-live-cap">Capsule 002 — shop</figcaption>
+          </figure>
+          <figure class="cs-live-card">
+            <picture>
+              <source srcset="marlet-live-value.webp" type="image/webp" />
+              <img src="marlet-live-value.jpg" alt="Marlét Clo value props — Never Restocked, Built To Last, Designed In The UK" width="1280" height="656" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption class="cs-live-cap">Never restocked</figcaption>
+          </figure>
+          <figure class="cs-live-card">
+            <picture>
+              <source srcset="marlet-live-essentials.webp" type="image/webp" />
+              <img src="marlet-live-essentials.jpg" alt="Capsule 001 Essentials — permanent collection on marletclo.com" width="1280" height="656" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption class="cs-live-cap">Essentials — Capsule 001</figcaption>
+          </figure>
+        </div>
+        <p class="cs-body" style="margin-top:1.5rem"><a href="https://marletclo.com" target="_blank" rel="noopener noreferrer" class="cs-meta-link">Visit marletclo.com →</a></p>
+      </div>
+    </div>
+  </div>
+
   <!-- SCOPE -->
   <div class="cs-section">
     <div class="cs-section-inner">
@@ -735,7 +806,7 @@
       <p class="cs-cta-label">Next project</p>
       <h2 class="cs-cta-heading">Want something similar?</h2>
       <p class="cs-cta-body">Shopify stores, bespoke themes, email setup and paid social — scoped to the brand.</p>
-      <a href="index.html#contact" class="hero-cta">Start a Project →</a>
+      <a href="services.html#enquire" class="hero-cta">Enquire about a store →</a>
     </div>
   </div>
 

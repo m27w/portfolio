@@ -1,0 +1,4 @@
+# Never deploy originals / scratch
+*.orig.jpg
+*.orig.png
+.DS_Store
