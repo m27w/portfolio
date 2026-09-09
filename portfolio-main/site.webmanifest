@@ -1,0 +1,17 @@
+{
+  "name": "Matthew Wright Studio",
+  "short_name": "MW Studio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "lang": "en-GB",
+  "description": "Full-stack developer & UI designer \u2014 Midlands, UK",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
