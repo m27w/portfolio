@@ -38,10 +38,50 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
 
+
+    /* ---- PORTFOLIO CHROME ---- */
+    .portfolio-chrome {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      background: rgba(12, 11, 9, 0.96);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .portfolio-chrome a {
+      color: var(--gold);
+      transition: opacity 0.2s;
+    }
+
+    .portfolio-chrome a:hover { opacity: 0.7; }
+
+    .portfolio-demo-note {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .portfolio-demo-note a {
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+    }
+
     /* ---- NAV ---- */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 34px; left: 0; right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
@@ -546,6 +586,11 @@
 </head>
 <body>
 
+  <div class="portfolio-chrome">
+    <a href="index.html#projects">← Matthew Wright</a>
+    <span>Portfolio demo</span>
+  </div>
+
   <!-- NAV -->
   <nav>
     <span class="nav-logo">Forma Studio</span>
@@ -839,7 +884,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-logo">Forma Studio</span>
+    <div>
+      <span class="footer-logo">Forma Studio</span>
+      <p class="portfolio-demo-note">Case study / demo for <a href="index.html">matthewwright.studio</a></p>
+    </div>
     <span class="footer-copy">© 2026 Forma Studio Ltd — London</span>
   </footer>
 

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Custom websites from £400, Shopify from £600. Full-stack developer & UI designer — Midlands, UK. Clear tiers, 50% deposit, quote in 24 hours." />
+  <title>Services &amp; Pricing | Matthew Wright Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">MW</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html" class="nav-active">Services</a></li>
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="#website-builds">Pricing</a></li>
+      <li><a href="#enquire">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+      <li><a href="index.html#projects" onclick="toggleMenu()">Work</a></li>
+      <li><a href="#website-builds" onclick="toggleMenu()">Pricing</a></li>
+      <li><a href="#enquire" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="svc-hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="svc-hero-content">
+      <p class="section-label">Services &amp; pricing</p>
+      <h1 class="svc-hero-title">Websites, Shopify stores and UI design — built to convert</h1>
+      <p class="svc-hero-sub">Full-stack developer and UI designer based in the Midlands. Clean custom sites from £400. E-commerce from £600. Design and build under one roof.</p>
+      <div class="svc-hero-ctas">
+        <a href="#enquire" class="hero-cta">Get a free 15-min quote</a>
+        <a href="marlet-clo.html" class="svc-cta-secondary">View work — Marlet Clo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="svc-intro reveal" id="intro">
+    <div class="svc-intro-inner">
+      <p class="svc-intro-lead">Most developers can’t design. Most designers can’t ship production code. I do both.</p>
+      <p class="svc-intro-body">You get a clear tier, a fixed process, and a site that looks premium without an agency invoice. Local SMEs who’ve outgrown DIY builders, and lifestyle brands who need a serious digital presence — that’s who this is for.</p>
+    </div>
+  </section>
+
+  <!-- WEBSITE BUILDS -->
+  <section class="reveal" id="website-builds">
+    <p class="section-label">Website builds</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-heading">Three tiers.<br />Choose your level.</h2>
+      <p class="pricing-desc">Choose the level that fits your project.</p>
+    </div>
+
+    <div class="pricing-grid svc-pkg-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Starter</p>
+        <p class="pricing-price">£400–£700</p>
+        <p class="pricing-meta">Turnaround: 5–7 days<br />Best for: Local businesses, sole traders, landing pages</p>
+        <ul class="pricing-bullets">
+          <li>Up to 5 pages</li>
+          <li>Mobile responsive design</li>
+          <li>Contact form</li>
+          <li>Basic on-page SEO</li>
+          <li>1 round of revisions</li>
+          <li>Hosting setup guidance</li>
+        </ul>
+        <a href="?package=Starter#enquire" class="svc-pkg-cta" data-package="Starter">Enquire about Starter →</a>
+      </div>
+
+      <div class="pricing-card pricing-card--popular">
+        <span class="pricing-badge">Most popular</span>
+        <p class="pricing-tier">Pro</p>
+        <p class="pricing-price">£700–£1,400</p>
+        <p class="pricing-meta">Turnaround: 7–12 days<br />Best for: Growing businesses, service companies, portfolios</p>
+        <ul class="pricing-bullets">
+          <li>Up to 10 pages</li>
+          <li>Custom UI design (Figma)</li>
+          <li>CMS integration</li>
+          <li>Blog or news section</li>
+          <li>Google Analytics setup</li>
+          <li>2 rounds of revisions</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="?package=Pro#enquire" class="svc-pkg-cta" data-package="Pro">Enquire about Pro →</a>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-tier">Premium</p>
+        <p class="pricing-price">£1,400–£2,800</p>
+        <p class="pricing-meta">Turnaround: 14–21 days<br />Best for: Brands wanting a bespoke, high-end digital presence</p>
+        <ul class="pricing-bullets">
+          <li>Unlimited pages</li>
+          <li>Full custom UI/UX design</li>
+          <li>Advanced animations &amp; interactions</li>
+          <li>Custom backend / database if needed</li>
+          <li>Performance &amp; speed optimisation</li>
+          <li>3 rounds of revisions</li>
+          <li>60-day post-launch support</li>
+          <li>Priority turnaround</li>
+        </ul>
+        <a href="?package=Premium#enquire" class="svc-pkg-cta" data-package="Premium">Enquire about Premium →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-COMMERCE -->
+  <section class="reveal" id="ecommerce">
+    <p class="section-label">E-commerce stores</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-heading">Shopify and<br />WooCommerce</h2>
+      <p class="pricing-desc">Built to sell.</p>
+    </div>
+
+    <div class="pricing-grid svc-pkg-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Shopify Starter</p>
+        <p class="pricing-price">£600–£900</p>
+        <p class="pricing-meta">Turnaround: 7 days</p>
+        <ul class="pricing-bullets">
+          <li>Premium theme customisation</li>
+          <li>Up to 20 products</li>
+          <li>Payment gateway setup</li>
+          <li>Shipping &amp; tax config</li>
+          <li>Mobile optimised</li>
+          <li>Basic SEO</li>
+        </ul>
+        <a href="?package=Shopify%20Starter#enquire" class="svc-pkg-cta" data-package="Shopify Starter">Enquire →</a>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-tier">Shopify Custom</p>
+        <p class="pricing-price">£1,000–£1,800</p>
+        <p class="pricing-meta">Turnaround: 10–14 days</p>
+        <ul class="pricing-bullets">
+          <li>Bespoke theme design</li>
+          <li>Unlimited products</li>
+          <li>Custom sections &amp; blocks</li>
+          <li>Discount &amp; upsell setup</li>
+          <li>App integrations</li>
+          <li>Analytics &amp; pixel setup</li>
+          <li>2 rounds of revisions</li>
+        </ul>
+        <a href="?package=Shopify%20Custom#enquire" class="svc-pkg-cta" data-package="Shopify Custom">Enquire →</a>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-tier">WooCommerce</p>
+        <p class="pricing-price">£800–£1,600</p>
+        <p class="pricing-meta">Turnaround: 10–14 days</p>
+        <ul class="pricing-bullets">
+          <li>WordPress + WooCommerce</li>
+          <li>Custom theme or build</li>
+          <li>Product &amp; category setup</li>
+          <li>Payment &amp; shipping</li>
+          <li>SEO plugin config</li>
+          <li>Training session included</li>
+        </ul>
+        <a href="?package=WooCommerce#enquire" class="svc-pkg-cta" data-package="WooCommerce">Enquire →</a>
+      </div>
+    </div>
+
+    <p class="svc-proof">Recently shipped a Shopify store for luxury streetwear brand Marlet Clo — happy to walk you through it on a call. <a href="marlet-clo.html">View case study →</a></p>
+  </section>
+
+  <!-- UI & SPECIALIST -->
+  <section class="reveal" id="specialist">
+    <p class="section-label">UI design &amp; more</p>
+    <h2 class="pricing-heading svc-section-heading">Specialist services</h2>
+
+    <div class="svc-specialist-grid">
+      <div class="svc-specialist-card">
+        <p class="pricing-tier">UI Design Package</p>
+        <p class="pricing-price">£300–£600</p>
+        <p class="svc-specialist-detail">Figma UI up to 8 screens. Desktop + mobile. Component library. Handoff-ready. 5–7 days.</p>
+        <a href="?package=UI#enquire" class="svc-pkg-cta" data-package="UI">Enquire →</a>
+      </div>
+      <div class="svc-specialist-card">
+        <p class="pricing-tier">Backend Development</p>
+        <p class="pricing-price">£1,200–£3,000+</p>
+        <p class="svc-specialist-detail">Full-stack builds — MySQL, Python, Java, REST APIs, admin panels, dashboards. Scoped per project.</p>
+        <a href="?package=Other#enquire" class="svc-pkg-cta" data-package="Other">Enquire →</a>
+      </div>
+      <div class="svc-specialist-card">
+        <p class="pricing-tier">Monthly Maintenance</p>
+        <p class="pricing-price">£100–£250/mo</p>
+        <p class="svc-specialist-detail">Updates, backups, uptime, security patches, minor content changes. Rolling monthly.</p>
+        <a href="?package=Other#enquire" class="svc-pkg-cta" data-package="Other">Enquire →</a>
+      </div>
+      <div class="svc-specialist-card">
+        <p class="pricing-tier">Google Ads Management</p>
+        <p class="pricing-price">£200–£400/mo</p>
+        <p class="svc-specialist-detail">Setup, keywords, ad copy, ongoing optimisation. Ad spend billed separately.</p>
+        <a href="?package=Other#enquire" class="svc-pkg-cta" data-package="Other">Enquire →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="reveal" id="addons">
+    <p class="section-label">Optional extras</p>
+    <h2 class="pricing-heading svc-section-heading">Add-ons</h2>
+    <ul class="svc-addons-list">
+      <li><span>Domain registration &amp; setup</span><span>£30–£50</span></li>
+      <li><span>Hosting setup &amp; config</span><span>£50</span></li>
+      <li><span>Logo design</span><span>£150–£350</span></li>
+      <li><span>Copywriting</span><span>£50–£150/page</span></li>
+      <li><span>Speed optimisation</span><span>£100–£200</span></li>
+      <li><span>Extra revision round</span><span>£75</span></li>
+      <li><span>Rush delivery (48–72hr)</span><span>+30% of project fee (Starter and UI only)</span></li>
+      <li><span>Training session (1hr)</span><span>£75</span></li>
+    </ul>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="reveal" id="process">
+    <p class="section-label">How it works</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-heading">Clear steps.<br />No surprises.</h2>
+      <p class="pricing-desc">One free revision round beyond what’s included if you’re not happy with the initial direction.</p>
+    </div>
+
+    <ol class="svc-process-list">
+      <li>
+        <span class="svc-process-num">01</span>
+        <div>
+          <h3 class="svc-process-title">Discovery</h3>
+          <p class="svc-process-desc">Short brief or 15-min call. Quote within 24 hours.</p>
+        </div>
+      </li>
+      <li>
+        <span class="svc-process-num">02</span>
+        <div>
+          <h3 class="svc-process-title">Deposit &amp; kick-off</h3>
+          <p class="svc-process-desc">50% upfront to secure your slot. No deposit, no start.</p>
+        </div>
+      </li>
+      <li>
+        <span class="svc-process-num">03</span>
+        <div>
+          <h3 class="svc-process-title">Design &amp; build</h3>
+          <p class="svc-process-desc">Figma first, your sign-off, then build. Updates at each stage.</p>
+        </div>
+      </li>
+      <li>
+        <span class="svc-process-num">04</span>
+        <div>
+          <h3 class="svc-process-title">Review &amp; revise</h3>
+          <p class="svc-process-desc">Feedback within your included rounds. Extra rounds £75.</p>
+        </div>
+      </li>
+      <li>
+        <span class="svc-process-num">05</span>
+        <div>
+          <h3 class="svc-process-title">Launch &amp; handover</h3>
+          <p class="svc-process-desc">Final invoice on delivery. Go live. Files, credentials, training if needed.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal" id="faq">
+    <p class="section-label">FAQ</p>
+    <h2 class="pricing-heading svc-section-heading">Common questions</h2>
+    <div class="svc-faq">
+      <details class="svc-faq-item">
+        <summary>How fast can you start?</summary>
+        <p>Quote within 24 hours of a clear brief. Work begins when the 50% deposit clears.</p>
+      </details>
+      <details class="svc-faq-item">
+        <summary>Do you work outside the Midlands?</summary>
+        <p>Yes — remote-first. Midlands is home base for local SMEs who want someone nearby.</p>
+      </details>
+      <details class="svc-faq-item">
+        <summary>Can you work with my existing brand?</summary>
+        <p>Yes. Bring colours, fonts, logo and reference sites in the brief form.</p>
+      </details>
+      <details class="svc-faq-item">
+        <summary>What if I only need design?</summary>
+        <p>UI Design Package from £300–£600. Often leads into a full build later.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + CONTACT STRIP -->
+  <section class="reveal svc-final-cta" id="ready">
+    <p class="section-label">Next step</p>
+    <h2 class="contact-heading">Ready when<br />you are</h2>
+    <p class="svc-final-body">Free 15-minute consult. No hard pitch — just a clear look at what’s possible for your budget.</p>
+    <div class="svc-final-btns">
+      <a href="#enquire" class="hero-cta">Book a call</a>
+      <a href="mailto:matthewwright.studio@gmail.com" class="svc-cta-secondary">Email Matthew</a>
+      <a href="https://instagram.com/matthewwright.studio" target="_blank" rel="noopener noreferrer" class="svc-cta-secondary">Instagram @matthewwright.studio</a>
+    </div>
+    <div class="svc-contact-strip">
+      <div class="svc-contact-item">
+        <span class="contact-type">Phone</span>
+        <a href="tel:07455840231" class="contact-val">07455840231</a>
+      </div>
+      <div class="svc-contact-item">
+        <span class="contact-type">Email</span>
+        <a href="mailto:matthewwright.studio@gmail.com" class="contact-val">matthewwright.studio@gmail.com</a>
+      </div>
+      <div class="svc-contact-item">
+        <span class="contact-type">Instagram</span>
+        <a href="https://instagram.com/matthewwright.studio" target="_blank" rel="noopener noreferrer" class="contact-val">@matthewwright.studio</a>
+      </div>
+      <div class="svc-contact-item">
+        <span class="contact-type">Web</span>
+        <a href="https://matthewwright.studio" class="contact-val">matthewwright.studio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRE FORM -->
+  <!--
+    FORMSPREE: wired to https://formspree.io/f/mrpgrqwo (Portfolio Enquiry).
+    Until then, form action will not deliver. Mailto fallback:
+    matthewwright.studio@gmail.com
+  -->
+  <section class="reveal" id="enquire">
+    <p class="section-label">Enquire</p>
+    <div class="svc-enquire-grid">
+      <div>
+        <h2 class="pricing-heading">Get a free<br />15-min quote</h2>
+        <p class="pricing-desc">Tell me about the project. I’ll reply within 24 hours with a clear scope and price.</p>
+      </div>
+      <form class="svc-form" action="https://formspree.io/f/mrpgrqwo" method="POST">
+        <div class="svc-form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="svc-form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="svc-form-row">
+          <label for="phone">Phone <span class="svc-optional">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+        <div class="svc-form-row">
+          <label for="package">Package</label>
+          <select id="package" name="package">
+            <option value="">Select a package</option>
+            <option value="Starter">Starter</option>
+            <option value="Pro">Pro</option>
+            <option value="Premium">Premium</option>
+            <option value="Shopify Starter">Shopify Starter</option>
+            <option value="Shopify Custom">Shopify Custom</option>
+            <option value="WooCommerce">WooCommerce</option>
+            <option value="UI">UI</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="svc-form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Brief, goals, timeline…"></textarea>
+        </div>
+        <button type="submit" class="hero-cta svc-form-submit">Send enquiry →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Matthew Wright</span>
+    <span class="footer-copy">© 2026 matthewwright.studio</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

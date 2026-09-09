@@ -294,6 +294,55 @@
       display: block !important;
     }
 
+
+    .cs-hero-img picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cs-cta-strip {
+      padding: 5rem 4rem !important;
+      border-top: 1px solid var(--border);
+      background: var(--grey);
+    }
+
+    .cs-cta-inner {
+      max-width: 640px;
+    }
+
+    .cs-cta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .cs-cta-heading {
+      font-family: var(--font-display) !important;
+      font-size: clamp(2.4rem, 5vw, 4rem) !important;
+      letter-spacing: 0.02em;
+      color: var(--white) !important;
+      line-height: 1;
+      margin-bottom: 1rem !important;
+    }
+
+    .cs-cta-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(245, 245, 240, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .cs-cta-strip { padding: 4rem 2rem !important; }
+    }
+
+    @media (max-width: 480px) {
+      .cs-cta-strip { padding: 3.5rem 1.5rem !important; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .cs-hero { padding: 7rem 2rem 4rem !important; }
@@ -337,7 +386,9 @@
     <a href="index.html" class="nav-logo">MW</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="index.html#projects">Work</a></li>
+      <li><a href="services.html#website-builds">Pricing</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -349,7 +400,9 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
       <li><a href="index.html#projects" onclick="toggleMenu()">Work</a></li>
+      <li><a href="services.html#website-builds" onclick="toggleMenu()">Pricing</a></li>
       <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
     </ul>
   </div>
@@ -389,7 +442,16 @@
 
   <!-- HERO IMAGE -->
   <div class="cs-hero-img">
-    <img src="marlet-clo.jpg" alt="Marlét Clo — Shopify store screenshot" />
+    <picture>
+      <source srcset="marlet-clo.webp" type="image/webp" />
+      <img
+        src="marlet-clo.jpg"
+        alt="Marlét Clo — Shopify store screenshot"
+        width="1920"
+        height="944"
+        decoding="async"
+      />
+    </picture>
   </div>
 
   <!-- OVERVIEW -->
@@ -406,7 +468,23 @@
     </div>
   </div>
 
+
   <div class="cs-divider"></div>
+
+  <!-- APPROACH -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Approach</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">How It Came Together</h2>
+        <p class="cs-body">The brand asked for a dark, minimal storefront that felt premium from the first scroll — so the Shopify theme, typography and colour system were built around that identity rather than a stock template.</p>
+        <p class="cs-body">Launch meant more than a product grid. The store, email authentication (SPF, DKIM, DMARC), and Meta Ads setup were treated as one stack so the capsule could go live with checkout, inbox deliverability and paid social already in place.</p>
+        <p class="cs-body">From there the work stayed hands-on: Instagram-led campaigns into GB, IE and US, plus checkout and discount logic so the drop wasn’t just live — it was ready to sell.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- SCOPE -->
   <div class="cs-section">
@@ -517,7 +595,16 @@
     </div>
   </div>
 
-  <div class="cs-divider"></div>
+
+  <!-- CTA -->
+  <div class="cs-cta-strip">
+    <div class="cs-cta-inner">
+      <p class="cs-cta-label">Next project</p>
+      <h2 class="cs-cta-heading">Want something similar?</h2>
+      <p class="cs-cta-body">Shopify stores, bespoke themes, email setup and paid social — scoped to the brand.</p>
+      <a href="index.html#contact" class="hero-cta">Start a Project →</a>
+    </div>
+  </div>
 
   <!-- BACK -->
   <div class="cs-next">
