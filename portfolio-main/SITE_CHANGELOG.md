@@ -13,3 +13,6 @@
 - Marlét case study: Capsule 002 live gallery (Growth Ops frames), enquire CTA → `services.html#enquire`.
 - WebP + dimensions/lazy already on homepage Marlét card; lang remains `en-GB`.
 - GA4 deferred until measurement ID provided.
+
+## 2026-09-09 (Marlét hero)
+- Replaced Marlét hero/card image with higher-res Capsule 002 live storefront crop (jpg + webp).
