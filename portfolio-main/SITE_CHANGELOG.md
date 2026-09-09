@@ -19,3 +19,6 @@
 
 ## 2026-09-09 (Strand)
 - Added Strand (mystrand.app) as own-product Selected Work card + `strand.html` case study (launching soon). Sitemap + llms updated.
+
+## 2026-09-09 (Strand hero)
+- Replaced Strand card/case-study hero with live mystrand.app homepage screenshot.
