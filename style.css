@@ -2159,3 +2159,8 @@ footer {
     justify-content: center;
   }
 }
+
+/* Strand card — keep headline + phone row framed */
+a[href="strand.html"] .project-img img {
+  object-position: center 20%;
+}

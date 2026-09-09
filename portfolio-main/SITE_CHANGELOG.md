@@ -22,3 +22,6 @@
 
 ## 2026-09-09 (Strand hero)
 - Replaced Strand card/case-study hero with live mystrand.app homepage screenshot.
+
+## 2026-09-09 (Strand hero v2)
+- Replaced Strand hero with user-supplied higher-res mystrand.app shot (cropped to fit card).
