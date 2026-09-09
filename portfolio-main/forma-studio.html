@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forma Studio — Architecture & Spatial Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0c0b09;
+      --deep: #111009;
+      --surface: #161410;
+      --gold: #c9a84c;
+      --gold-muted: rgba(201,168,76,0.35);
+      --gold-faint: rgba(201,168,76,0.08);
+      --white: #f2ede6;
+      --muted: rgba(242,237,230,0.38);
+      --border: rgba(201,168,76,0.14);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+
+    /* ---- PORTFOLIO CHROME ---- */
+    .portfolio-chrome {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      background: rgba(12, 11, 9, 0.96);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .portfolio-chrome a {
+      color: var(--gold);
+      transition: opacity 0.2s;
+    }
+
+    .portfolio-chrome a:hover { opacity: 0.7; }
+
+    .portfolio-demo-note {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .portfolio-demo-note a {
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 34px; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5rem;
+      background: rgba(12,11,9,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .nav-links a {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 5rem 6rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Gold radial glow top right */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 55%;
+      height: 70%;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Architectural SVG fills the hero */
+    .hero-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 6rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3.8rem, 7vw, 7.5rem);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 2.8rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding-left: 4rem;
+      border-left: 1px solid var(--border);
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+
+    .hero-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    /* ---- MARQUEE ---- */
+    .marquee-wrap {
+      overflow: hidden;
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--gold-faint);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+      white-space: nowrap;
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+    }
+
+    .marquee-sep { color: var(--gold); opacity: 0.3; font-style: normal; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ---- ABOUT ---- */
+    #about {
+      padding: 9rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: start;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .about-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    .about-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .about-body {
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+    }
+
+    .about-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .about-detail {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-detail:nth-child(2n) { border-right: none; }
+    .about-detail:nth-last-child(-n+2) { border-bottom: none; }
+
+    .about-detail-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-detail-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .disciplines-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .discipline-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left 0.25s;
+      cursor: default;
+    }
+
+    .discipline-row:first-child { border-top: 1px solid var(--border); }
+
+    .discipline-row:hover { padding-left: 0.75rem; }
+
+    .discipline-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--white);
+      transition: color 0.25s;
+    }
+
+    .discipline-row:hover .discipline-name { color: var(--gold); }
+
+    .discipline-arrow {
+      font-size: 0.7rem;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .discipline-row:hover .discipline-arrow { opacity: 1; }
+
+    /* ---- PROJECTS ---- */
+    #projects {
+      padding: 0 5rem 9rem;
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 5rem 0 4rem;
+      border-top: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .projects-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--white);
+    }
+
+    .projects-heading em { font-style: italic; color: var(--gold); }
+
+    .projects-subtext {
+      max-width: 280px;
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.3s;
+      cursor: pointer;
+      background: var(--surface);
+    }
+
+    .project-card:hover { border-color: var(--gold-muted); }
+
+    .project-card--wide { grid-column: span 2; }
+
+    .project-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-img-wrap svg {
+      display: block;
+      width: 100%;
+    }
+
+    .project-card-info {
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-card-left {}
+
+    .project-card-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--white);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-card-type {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    .project-card-year {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* ---- CONTACT ---- */
+    #contact {
+      border-top: 1px solid var(--border);
+      background: var(--deep);
+      padding: 9rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: end;
+    }
+
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.5vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    .contact-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-row:first-child { border-top: 1px solid var(--border); }
+
+    .contact-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    .contact-val {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--gold);
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-copy {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      nav { padding: 1.5rem 2rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 2rem 5rem; }
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-stats { flex-direction: row; padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 2rem; }
+      #about { grid-template-columns: 1fr; gap: 4rem; padding: 6rem 2rem; }
+      #projects { padding: 0 2rem 6rem; }
+      .projects-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .projects-subtext { text-align: left; max-width: 100%; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card--wide { grid-column: span 1; }
+      #contact { grid-template-columns: 1fr; padding: 6rem 2rem; gap: 4rem; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portfolio-chrome">
+    <a href="index.html#projects">← Matthew Wright</a>
+    <span>Portfolio demo</span>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">Forma Studio</span>
+    <ul class="nav-links">
+      <li><a href="#about">Practice</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" class="hero-svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="1440" height="900" fill="#0c0b09"/>
+        <!-- Vanishing point perspective lines -->
+        <line x1="720" y1="340" x2="0" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+        <line x1="720" y1="340" x2="240" y2="900" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+        <line x1="720" y1="340" x2="480" y2="900" stroke="rgba(201,168,76,0.04)" stroke-width="1"/>
+        <line x1="720" y1="340" x2="960" y2="900" stroke="rgba(201,168,76,0.04)" stroke-width="1"/>
+        <line x1="720" y1="340" x2="1200" y2="900" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+        <line x1="720" y1="340" x2="1440" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+        <!-- Building silhouette left -->
+        <rect x="80" y="200" width="280" height="700" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+        <line x1="80" y1="280" x2="360" y2="280" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="80" y1="360" x2="360" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="80" y1="440" x2="360" y2="440" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="80" y1="520" x2="360" y2="520" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="80" y1="600" x2="360" y2="600" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="160" y1="200" x2="160" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="240" y1="200" x2="240" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="320" y1="200" x2="320" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <!-- Lit windows left -->
+        <rect x="96" y="296" width="48" height="48" fill="rgba(201,168,76,0.12)"/>
+        <rect x="176" y="376" width="48" height="48" fill="rgba(201,168,76,0.08)"/>
+        <rect x="256" y="296" width="48" height="48" fill="rgba(201,168,76,0.15)"/>
+        <rect x="96" y="456" width="48" height="48" fill="rgba(201,168,76,0.07)"/>
+        <rect x="256" y="536" width="48" height="48" fill="rgba(201,168,76,0.1)"/>
+        <!-- Building silhouette right -->
+        <rect x="1080" y="100" width="280" height="800" fill="rgba(201,168,76,0.025)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+        <line x1="1080" y1="200" x2="1360" y2="200" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1080" y1="300" x2="1360" y2="300" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1080" y1="400" x2="1360" y2="400" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1080" y1="500" x2="1360" y2="500" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1080" y1="600" x2="1360" y2="600" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1080" y1="700" x2="1360" y2="700" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1160" y1="100" x2="1160" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1240" y1="100" x2="1240" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <line x1="1320" y1="100" x2="1320" y2="900" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <!-- Lit windows right -->
+        <rect x="1096" y="216" width="48" height="68" fill="rgba(201,168,76,0.11)"/>
+        <rect x="1176" y="316" width="48" height="68" fill="rgba(201,168,76,0.07)"/>
+        <rect x="1256" y="216" width="48" height="68" fill="rgba(201,168,76,0.14)"/>
+        <rect x="1096" y="416" width="48" height="68" fill="rgba(201,168,76,0.09)"/>
+        <rect x="1336" y="516" width="8" height="68" fill="rgba(201,168,76,0.06)"/>
+        <!-- Centre focal arch -->
+        <path d="M560,900 L560,440 Q720,260 880,440 L880,900" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+        <path d="M600,900 L600,460 Q720,300 840,460 L840,900" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+        <!-- Ground line -->
+        <line x1="0" y1="780" x2="1440" y2="780" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div>
+        <p class="hero-eyebrow">Architecture & Spatial Design — London</p>
+        <h1 class="hero-title">
+          Where structure<br />
+          meets <em>intention.</em>
+        </h1>
+        <a href="#projects" class="hero-cta">View Our Work →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">14</span>
+          <p class="hero-stat-label">Projects Delivered</p>
+        </div>
+        <div>
+          <span class="hero-stat-num">8</span>
+          <p class="hero-stat-label">Years in Practice</p>
+        </div>
+        <div>
+          <span class="hero-stat-num">3</span>
+          <p class="hero-stat-label">Design Awards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Residential</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Commercial</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Interior Design</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Urban Planning</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Heritage Restoration</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Spatial Consultancy</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Residential</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Commercial</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Interior Design</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Urban Planning</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Heritage Restoration</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+      <span class="marquee-item">Spatial Consultancy</span><span class="marquee-sep"> &nbsp;·&nbsp; </span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div>
+      <p class="section-eyebrow">The Practice</p>
+      <h2 class="about-heading">We design spaces that <em>outlast trends.</em></h2>
+      <p class="about-body">Forma Studio is a London-based architecture and spatial design practice. We work across residential, commercial, and cultural briefs — always with the same commitment to material honesty, spatial clarity, and the long view. Every project we take on is one we intend to be proud of in twenty years.</p>
+      <div class="about-detail-grid">
+        <div class="about-detail">
+          <span class="about-detail-num">14</span>
+          <span class="about-detail-label">Projects</span>
+        </div>
+        <div class="about-detail">
+          <span class="about-detail-num">8</span>
+          <span class="about-detail-label">Years</span>
+        </div>
+        <div class="about-detail">
+          <span class="about-detail-num">3</span>
+          <span class="about-detail-label">Awards</span>
+        </div>
+        <div class="about-detail">
+          <span class="about-detail-num">6</span>
+          <span class="about-detail-label">Countries</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="section-eyebrow">Disciplines</p>
+      <div class="disciplines-list">
+        <div class="discipline-row">
+          <span class="discipline-name">Architecture</span>
+          <span class="discipline-arrow">→</span>
+        </div>
+        <div class="discipline-row">
+          <span class="discipline-name">Interior Design</span>
+          <span class="discipline-arrow">→</span>
+        </div>
+        <div class="discipline-row">
+          <span class="discipline-name">Urban Design</span>
+          <span class="discipline-arrow">→</span>
+        </div>
+        <div class="discipline-row">
+          <span class="discipline-name">Heritage & Restoration</span>
+          <span class="discipline-arrow">→</span>
+        </div>
+        <div class="discipline-row">
+          <span class="discipline-name">Spatial Consultancy</span>
+          <span class="discipline-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="projects-header">
+      <h2 class="projects-heading">Selected<br /><em>Projects</em></h2>
+      <p class="projects-subtext">A selection of recent work across residential, commercial and cultural commissions.</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Wide card -->
+      <div class="project-card project-card--wide">
+        <div class="project-img-wrap">
+          <svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="1200" height="420" fill="#111009"/>
+            <line x1="0" y1="360" x2="1200" y2="360" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+            <rect x="80" y="80" width="1040" height="280" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.75"/>
+            <!-- Vertical grid -->
+            <line x1="184" y1="80" x2="184" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="288" y1="80" x2="288" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="392" y1="80" x2="392" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="496" y1="80" x2="496" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="600" y1="80" x2="600" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="704" y1="80" x2="704" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="808" y1="80" x2="808" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="912" y1="80" x2="912" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="1016" y1="80" x2="1016" y2="360" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <!-- Horizontal grid -->
+            <line x1="80" y1="150" x2="1120" y2="150" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="80" y1="220" x2="1120" y2="220" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <line x1="80" y1="290" x2="1120" y2="290" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+            <!-- Lit panels -->
+            <rect x="96" y="96" width="72" height="46" fill="rgba(201,168,76,0.13)"/>
+            <rect x="296" y="166" width="72" height="46" fill="rgba(201,168,76,0.09)"/>
+            <rect x="504" y="96" width="72" height="46" fill="rgba(201,168,76,0.16)"/>
+            <rect x="712" y="236" width="72" height="46" fill="rgba(201,168,76,0.08)"/>
+            <rect x="920" y="96" width="72" height="46" fill="rgba(201,168,76,0.12)"/>
+            <rect x="1024" y="166" width="72" height="46" fill="rgba(201,168,76,0.1)"/>
+            <text x="88" y="72" font-family="Georgia,serif" font-size="9" fill="rgba(201,168,76,0.4)" letter-spacing="3">KESSLER CULTURAL CENTRE — LONDON, 2023</text>
+          </svg>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-left">
+            <span class="project-card-name">Kessler Cultural Centre</span>
+            <span class="project-card-type">Cultural / Public · London</span>
+          </div>
+          <span class="project-card-year">2023</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <svg viewBox="0 0 580 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="580" height="360" fill="#13110d"/>
+            <line x1="0" y1="310" x2="580" y2="310" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+            <!-- House form -->
+            <polygon points="290,60 80,195 500,195" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.75"/>
+            <rect x="80" y="195" width="420" height="115" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.75"/>
+            <rect x="130" y="215" width="55" height="75" fill="rgba(201,168,76,0.11)"/>
+            <rect x="262" y="215" width="55" height="75" fill="rgba(201,168,76,0.15)"/>
+            <rect x="394" y="215" width="55" height="75" fill="rgba(201,168,76,0.09)"/>
+            <line x1="290" y1="60" x2="290" y2="195" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <text x="88" y="52" font-family="Georgia,serif" font-size="8" fill="rgba(201,168,76,0.35)" letter-spacing="2">VALE HOUSE — 2022</text>
+          </svg>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-left">
+            <span class="project-card-name">Vale House</span>
+            <span class="project-card-type">Residential · Cotswolds</span>
+          </div>
+          <span class="project-card-year">2022</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <svg viewBox="0 0 580 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="580" height="360" fill="#0f0d0a"/>
+            <line x1="0" y1="310" x2="580" y2="310" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+            <!-- Tower -->
+            <rect x="190" y="40" width="200" height="270" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.75"/>
+            <line x1="230" y1="40" x2="230" y2="310" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="270" y1="40" x2="270" y2="310" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="310" y1="40" x2="310" y2="310" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="350" y1="40" x2="350" y2="310" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="190" y1="88" x2="390" y2="88" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="190" y1="136" x2="390" y2="136" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="190" y1="184" x2="390" y2="184" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="190" y1="232" x2="390" y2="232" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <line x1="190" y1="280" x2="390" y2="280" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            <!-- Windows -->
+            <rect x="198" y="96" width="24" height="32" fill="rgba(201,168,76,0.18)"/>
+            <rect x="238" y="144" width="24" height="32" fill="rgba(201,168,76,0.11)"/>
+            <rect x="318" y="96" width="24" height="32" fill="rgba(201,168,76,0.14)"/>
+            <rect x="358" y="192" width="24" height="32" fill="rgba(201,168,76,0.09)"/>
+            <rect x="238" y="240" width="24" height="32" fill="rgba(201,168,76,0.13)"/>
+            <text x="198" y="32" font-family="Georgia,serif" font-size="8" fill="rgba(201,168,76,0.35)" letter-spacing="2">ALDGATE TOWER — 2024</text>
+          </svg>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-left">
+            <span class="project-card-name">Aldgate Tower</span>
+            <span class="project-card-type">Commercial · London</span>
+          </div>
+          <span class="project-card-year">2024</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div>
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="contact-heading">Let's build something <em>lasting.</em></h2>
+    </div>
+    <div class="contact-items">
+      <div class="contact-row">
+        <span class="contact-label">Location</span>
+        <span class="contact-val">Clerkenwell, London EC1</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">New Enquiries</span>
+        <span class="contact-val">studio@formastudio.co.uk</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Phone</span>
+        <span class="contact-val">+44 20 7123 4567</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <span class="footer-logo">Forma Studio</span>
+      <p class="portfolio-demo-note">Case study / demo for <a href="index.html">matthewwright.studio</a></p>
+    </div>
+    <span class="footer-copy">© 2026 Forma Studio Ltd — London</span>
+  </footer>
+
+</body>
+</html>

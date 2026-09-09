@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marlét Clo — Case Study by Matthew Wright. Full Shopify store build, bespoke theme design, Meta Ads setup and e-commerce optimisation." />
+  <title>Marlét Clo — Case Study / Matthew Wright</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* =====================
+       CASE STUDY OVERRIDES
+    ===================== */
+    .cs-hero {
+      min-height: 100vh;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      padding: 8rem 4rem 5rem !important;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--black);
+    }
+
+    .cs-hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .cs-back-row {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .cs-back {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .cs-back:hover { color: var(--white); }
+
+    .cs-index {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+    }
+
+    .cs-title {
+      font-family: var(--font-display) !important;
+      font-size: clamp(5rem, 13vw, 11rem) !important;
+      line-height: 0.9 !important;
+      letter-spacing: -0.01em !important;
+      color: var(--white) !important;
+      margin-bottom: 1.5rem !important;
+      animation: fadeUp 0.8s ease 0.15s both;
+      display: block !important;
+    }
+
+    .cs-subtitle {
+      font-size: 1rem;
+      color: rgba(245, 245, 240, 0.45);
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+      animation: fadeUp 0.8s ease 0.3s both;
+      display: block !important;
+    }
+
+    .cs-meta-row {
+      display: flex !important;
+      gap: 4rem;
+      flex-wrap: wrap;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+
+    .cs-meta {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.5rem;
+    }
+
+    .cs-meta-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cs-meta-val {
+      font-size: 0.92rem;
+      color: var(--white);
+    }
+
+    .cs-meta-link {
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      padding-bottom: 0.15rem;
+      transition: border-color 0.2s;
+    }
+
+    .cs-meta-link:hover { border-color: var(--white); }
+
+    /* HERO IMAGE */
+    .cs-hero-img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      background: var(--mid);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(10%) brightness(0.9);
+    }
+
+    /* SECTIONS */
+    .cs-section {
+      padding: 7rem 4rem !important;
+      border-top: 1px solid var(--border);
+    }
+
+    .cs-section-inner {
+      display: grid !important;
+      grid-template-columns: 240px 1fr !important;
+      gap: 8rem !important;
+      align-items: start;
+    }
+
+    .cs-label-col .section-label {
+      margin-bottom: 0 !important;
+      position: sticky;
+      top: 7rem;
+    }
+
+    .cs-content-col { min-width: 0; }
+
+    .cs-heading {
+      font-family: var(--font-display) !important;
+      font-size: clamp(2.5rem, 4vw, 3.8rem) !important;
+      letter-spacing: 0.02em;
+      color: var(--white) !important;
+      line-height: 1;
+      margin-bottom: 2rem !important;
+      display: block !important;
+    }
+
+    .cs-body {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(245, 245, 240, 0.52);
+      margin-bottom: 1.5rem;
+      display: block !important;
+    }
+
+    /* WORK LIST */
+    .cs-work-list {
+      display: flex !important;
+      flex-direction: column !important;
+      margin-top: 0.5rem;
+    }
+
+    .cs-work-item {
+      display: grid !important;
+      grid-template-columns: 56px 1fr !important;
+      gap: 2rem !important;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-work-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .cs-work-num {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      padding-top: 0.2rem;
+    }
+
+    .cs-work-body { min-width: 0; }
+
+    .cs-work-title {
+      font-family: var(--font-display) !important;
+      font-size: 1.8rem !important;
+      letter-spacing: 0.04em;
+      color: var(--white) !important;
+      margin-bottom: 1rem !important;
+      line-height: 1;
+      display: block !important;
+    }
+
+    .cs-work-desc {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: rgba(245, 245, 240, 0.48);
+      margin-bottom: 1.5rem;
+      display: block !important;
+    }
+
+    .cs-work-tags {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    /* STACK GRID */
+    .cs-stack-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      border: 1px solid var(--border);
+      margin-top: 0.5rem;
+    }
+
+    .cs-stack-item {
+      padding: 2.25rem 2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.5rem;
+    }
+
+    .cs-stack-item:nth-child(3n) { border-right: none; }
+    .cs-stack-item:nth-last-child(-n+3) { border-bottom: none; }
+
+    .cs-stack-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      line-height: 1;
+      display: block !important;
+    }
+
+    .cs-stack-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* DIVIDER */
+    .cs-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 4rem;
+    }
+
+    /* BACK / NEXT */
+    .cs-next {
+      padding: 6rem 4rem !important;
+      border-top: 1px solid var(--border);
+      display: block !important;
+    }
+
+    .cs-next-inner {
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .cs-next-inner:hover { opacity: 0.65; }
+
+    .cs-next-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      display: block !important;
+    }
+
+    .cs-next-heading {
+      font-family: var(--font-display) !important;
+      font-size: clamp(3rem, 7vw, 6rem) !important;
+      letter-spacing: 0.02em;
+      color: var(--white) !important;
+      line-height: 1;
+      display: block !important;
+    }
+
+
+    .cs-hero-img picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cs-cta-strip {
+      padding: 5rem 4rem !important;
+      border-top: 1px solid var(--border);
+      background: var(--grey);
+    }
+
+    .cs-cta-inner {
+      max-width: 640px;
+    }
+
+    .cs-cta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .cs-cta-heading {
+      font-family: var(--font-display) !important;
+      font-size: clamp(2.4rem, 5vw, 4rem) !important;
+      letter-spacing: 0.02em;
+      color: var(--white) !important;
+      line-height: 1;
+      margin-bottom: 1rem !important;
+    }
+
+    .cs-cta-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(245, 245, 240, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .cs-cta-strip { padding: 4rem 2rem !important; }
+    }
+
+    @media (max-width: 480px) {
+      .cs-cta-strip { padding: 3.5rem 1.5rem !important; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .cs-hero { padding: 7rem 2rem 4rem !important; }
+      .cs-meta-row { gap: 2rem; }
+      .cs-section { padding: 5rem 2rem !important; }
+      .cs-section-inner {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      .cs-label-col .section-label { position: static; }
+      .cs-divider { margin: 0 2rem; }
+      .cs-stack-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .cs-stack-item:nth-child(3n) { border-right: 1px solid var(--border); }
+      .cs-stack-item:nth-child(2n) { border-right: none; }
+      .cs-stack-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+      .cs-stack-item:nth-last-child(-n+2) { border-bottom: none; }
+      .cs-next { padding: 4rem 2rem !important; }
+      .cs-work-item {
+        grid-template-columns: 36px 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .cs-hero-img { aspect-ratio: 4 / 3; }
+    }
+
+    @media (max-width: 480px) {
+      .cs-hero { padding: 6rem 1.5rem 3.5rem !important; }
+      .cs-section { padding: 4rem 1.5rem !important; }
+      .cs-divider { margin: 0 1.5rem; }
+      .cs-next { padding: 3.5rem 1.5rem !important; }
+      .cs-stack-grid { grid-template-columns: 1fr !important; }
+      .cs-stack-item { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+      .cs-stack-item:last-child { border-bottom: none !important; }
+      .cs-meta-row { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">MW</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#projects">Work</a></li>
+      <li><a href="services.html#website-builds">Pricing</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+      <li><a href="index.html#projects" onclick="toggleMenu()">Work</a></li>
+      <li><a href="services.html#website-builds" onclick="toggleMenu()">Pricing</a></li>
+      <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <div class="hero-bg"></div>
+    <div class="cs-hero-inner">
+      <div class="cs-back-row">
+        <a href="index.html#projects" class="cs-back">← Back to Work</a>
+        <span class="cs-index">01 / Featured</span>
+      </div>
+      <h1 class="cs-title">Marlét Clo</h1>
+      <p class="cs-subtitle">Luxury streetwear — debut headwear capsule drop</p>
+      <div class="cs-meta-row">
+        <div class="cs-meta">
+          <span class="cs-meta-label">Type</span>
+          <span class="cs-meta-val">E-Commerce Store</span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta-label">Platform</span>
+          <span class="cs-meta-val">Shopify</span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Full-Stack + Design</span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta-label">Live At</span>
+          <span class="cs-meta-val">
+            <a href="https://marletclo.com" target="_blank" rel="noopener noreferrer" class="cs-meta-link">marletclo.com →</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="cs-hero-img">
+    <picture>
+      <source srcset="marlet-clo.webp" type="image/webp" />
+      <img
+        src="marlet-clo.jpg"
+        alt="Marlét Clo — Shopify store screenshot"
+        width="1920"
+        height="944"
+        decoding="async"
+      />
+    </picture>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Overview</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">The Brief</h2>
+        <p class="cs-body">Marlét Clo is a luxury streetwear brand launching its debut headwear capsule. The brief was to build a Shopify store that matched the brand's identity — dark, minimal, high-end — and set up the infrastructure needed to launch and market the collection from day one.</p>
+        <p class="cs-body">The project covered the full stack: store build, bespoke theme customisation, email marketing setup, DNS and deliverability configuration, and a live Meta Ads operation to drive traffic to the drop.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cs-divider"></div>
+
+  <!-- APPROACH -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Approach</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">How It Came Together</h2>
+        <p class="cs-body">The brand asked for a dark, minimal storefront that felt premium from the first scroll — so the Shopify theme, typography and colour system were built around that identity rather than a stock template.</p>
+        <p class="cs-body">Launch meant more than a product grid. The store, email authentication (SPF, DKIM, DMARC), and Meta Ads setup were treated as one stack so the capsule could go live with checkout, inbox deliverability and paid social already in place.</p>
+        <p class="cs-body">From there the work stayed hands-on: Instagram-led campaigns into GB, IE and US, plus checkout and discount logic so the drop wasn’t just live — it was ready to sell.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCOPE -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Scope</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">What I Built</h2>
+        <div class="cs-work-list">
+
+          <div class="cs-work-item">
+            <div class="cs-work-num">01</div>
+            <div class="cs-work-body">
+              <h3 class="cs-work-title">Shopify Store Build</h3>
+              <p class="cs-work-desc">Built the full Shopify store from scratch — product setup, collection architecture, checkout flow, and a bespoke theme customisation to match the brand's dark, minimal aesthetic. Typography, spacing and colour decisions were made to position the brand at the premium end of the market.</p>
+              <div class="cs-work-tags">
+                <span class="project-tag">Shopify</span>
+                <span class="project-tag">Liquid</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">UI Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-work-item">
+            <div class="cs-work-num">02</div>
+            <div class="cs-work-body">
+              <h3 class="cs-work-title">Email Deliverability & DNS</h3>
+              <p class="cs-work-desc">Configured full DNS authentication for transactional and marketing email — SPF, DKIM, and DMARC records set up and verified to ensure order confirmations and campaigns land in the inbox rather than spam. Resolved existing deliverability issues that were affecting customer communication.</p>
+              <div class="cs-work-tags">
+                <span class="project-tag">DNS</span>
+                <span class="project-tag">SPF / DKIM / DMARC</span>
+                <span class="project-tag">Email Deliverability</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-work-item">
+            <div class="cs-work-num">03</div>
+            <div class="cs-work-body">
+              <h3 class="cs-work-title">Meta Ads Setup & Management</h3>
+              <p class="cs-work-desc">Set up and actively managed Meta Ads campaigns targeting GB, IE, and US markets. Instagram-only placements with CBO budget structure, optimised for purchase events. Ongoing creative direction, audience refinement, and performance analysis to drive traffic to the drop.</p>
+              <div class="cs-work-tags">
+                <span class="project-tag">Meta Ads</span>
+                <span class="project-tag">Instagram</span>
+                <span class="project-tag">CBO</span>
+                <span class="project-tag">Paid Social</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-work-item">
+            <div class="cs-work-num">04</div>
+            <div class="cs-work-body">
+              <h3 class="cs-work-title">Conversion Optimisation</h3>
+              <p class="cs-work-desc">Investigated and addressed abandoned checkout issues — analysing drop-off points, reviewing checkout UX, and implementing fixes to recover lost conversions. Ongoing discount logic management and promotional mechanics on Shopify.</p>
+              <div class="cs-work-tags">
+                <span class="project-tag">CRO</span>
+                <span class="project-tag">Shopify</span>
+                <span class="project-tag">Analytics</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <!-- STACK -->
+  <div class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <p class="section-label">Stack</p>
+      </div>
+      <div class="cs-content-col">
+        <h2 class="cs-heading">Tech Used</h2>
+        <div class="cs-stack-grid">
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">Shopify</span>
+            <span class="cs-stack-role">Store platform & theme</span>
+          </div>
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">Liquid</span>
+            <span class="cs-stack-role">Theme templating</span>
+          </div>
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">CSS</span>
+            <span class="cs-stack-role">Bespoke styling</span>
+          </div>
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">Meta Ads</span>
+            <span class="cs-stack-role">Paid social campaigns</span>
+          </div>
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">DNS / SPF / DKIM</span>
+            <span class="cs-stack-role">Email authentication</span>
+          </div>
+          <div class="cs-stack-item">
+            <span class="cs-stack-name">Figma</span>
+            <span class="cs-stack-role">Design & layout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CTA -->
+  <div class="cs-cta-strip">
+    <div class="cs-cta-inner">
+      <p class="cs-cta-label">Next project</p>
+      <h2 class="cs-cta-heading">Want something similar?</h2>
+      <p class="cs-cta-body">Shopify stores, bespoke themes, email setup and paid social — scoped to the brand.</p>
+      <a href="index.html#contact" class="hero-cta">Start a Project →</a>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="cs-next">
+    <a href="index.html#projects" class="cs-next-inner">
+      <p class="cs-next-label">Back to Work</p>
+      <h2 class="cs-next-heading">View All Projects →</h2>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Matthew Wright</span>
+    <span class="footer-copy">© 2026 matthewwright.studio</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matthew Wright — Full-Stack Developer & UI Designer based in the Midlands, UK. Building websites, e-commerce stores, backends and interactive interfaces." />
+  <title>Matthew Wright — Full-Stack Developer & UI Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">MW</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Work</a></li>
+      <li><a href="#pricing" onclick="toggleMenu()">Pricing</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="scroll-line" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Full-Stack Developer &amp; UI Designer — Midlands, UK</p>
+      <h1 class="hero-title">
+        Matthew<br />
+        <span>Wright</span>
+      </h1>
+      <div class="hero-sub">
+        <p class="hero-desc">Websites, e-commerce stores and backends — built with technical depth and designed to be used.</p>
+        <a href="#projects" class="hero-cta">View Work →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <p class="section-label">About</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="about-heading">Design Meets<br />Development</h2>
+      </div>
+      <div>
+        <p class="about-text">Websites, e-commerce stores, and robust backends — built with both technical depth and design thinking. Whether it's a Shopify store or a bespoke full-stack build, every project gets the same level of craft and attention to detail.</p>
+        <div class="skills-grid">
+          <span class="skill-tag">WooCommerce</span>
+          <span class="skill-tag">Shopify</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">Full</span>
+        <p class="stat-label">Stack Development</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">UI</span>
+        <p class="stat-label">Interface Design</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">E-COM</span>
+        <p class="stat-label">Store Builds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="reveal">
+    <p class="section-label">Services</p>
+    <div class="services-intro">
+      <h2 class="services-heading">What's On<br />Offer</h2>
+      <p class="services-desc">From a single landing page to a full e-commerce operation — the build, the design, and the backend, all under one roof. Here's what a project looks like.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-item">
+        <span class="service-num">01</span>
+        <div class="service-body">
+          <h3 class="service-title">Website Builds</h3>
+          <p class="service-desc">Bespoke websites built from scratch — no page builders, no bloated templates. Fast, responsive, and designed to reflect your brand properly. From single-page portfolios to multi-page business sites.</p>
+          <div class="service-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">WooCommerce</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="service-num">02</span>
+        <div class="service-body">
+          <h3 class="service-title">E-Commerce Stores</h3>
+          <p class="service-desc">Full store builds on Shopify or WooCommerce — product setup, checkout flow, payment integration, and a theme that fits the brand. Built to convert, not just look good.</p>
+          <div class="service-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">WooCommerce</span>
+            <span class="project-tag">Liquid</span>
+            <span class="project-tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="service-num">03</span>
+        <div class="service-body">
+          <h3 class="service-title">UI Design</h3>
+          <p class="service-desc">Interface design that's deliberate — layouts, typography, colour systems, and components that work together. Designed in Figma and handed off clean, or built straight into code.</p>
+          <div class="service-tags">
+            <span class="project-tag">Figma</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">UI Systems</span>
+            <span class="project-tag">Prototyping</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="service-num">04</span>
+        <div class="service-body">
+          <h3 class="service-title">Backend Development</h3>
+          <p class="service-desc">Database design, server-side logic, and API integration. Whether it's a custom admin panel, a booking system, or connecting third-party services — built to be reliable and maintainable.</p>
+          <div class="service-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Java</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="services-cta-row">
+      <a href="services.html" class="hero-cta">View packages &amp; pricing →</a>
+    </div>
+  </section>
+
+
+  <!-- PRICING (compact teaser — full detail on services.html) -->
+  <section id="pricing" class="reveal pricing--compact">
+    <p class="section-label">Pricing</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-heading">Clear Packages.<br />No Guesswork.</h2>
+      <p class="pricing-desc">Website builds from £400. Shopify from £600. Full tiers, add-ons, process and FAQ on the services page.</p>
+    </div>
+
+    <p class="pricing-sublabel">Website Builds</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="pricing-tier">Starter</p>
+        <p class="pricing-price">£400–£700</p>
+        <p class="pricing-meta">5–7 days · Local businesses &amp; landing pages</p>
+      </div>
+      <div class="pricing-card pricing-card--popular">
+        <span class="pricing-badge">Most Popular</span>
+        <p class="pricing-tier">Pro</p>
+        <p class="pricing-price">£700–£1,400</p>
+        <p class="pricing-meta">7–12 days · Growing businesses &amp; portfolios</p>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-tier">Premium</p>
+        <p class="pricing-price">£1,400–£2,800</p>
+        <p class="pricing-meta">14–21 days · Bespoke, high-end presence</p>
+      </div>
+    </div>
+
+    <p class="pricing-sublabel">E-Commerce</p>
+    <div class="pricing-ecom">
+      <div class="pricing-ecom-card">
+        <p class="pricing-tier">Shopify Starter</p>
+        <p class="pricing-price">£600–£900</p>
+        <p class="pricing-meta">7 days</p>
+      </div>
+      <div class="pricing-ecom-card">
+        <p class="pricing-tier">Shopify Custom</p>
+        <p class="pricing-price">£1,000–£1,800</p>
+        <p class="pricing-meta">10–14 days</p>
+      </div>
+      <div class="pricing-ecom-card">
+        <p class="pricing-tier">WooCommerce</p>
+        <p class="pricing-price">£800–£1,600</p>
+        <p class="pricing-meta">10–14 days</p>
+      </div>
+    </div>
+
+    <div class="pricing-notes">
+      <p><span>UI Design</span> £300–£600</p>
+      <p><span>Monthly maintenance</span> £100–£250/mo</p>
+    </div>
+
+    <div class="services-cta-row" style="justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+      <a href="services.html" class="pricing-teaser-link">Full packages &amp; FAQ →</a>
+      <a href="services.html#enquire" class="hero-cta">Start a Project →</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <p class="section-label">Selected Work</p>
+
+    <!-- Project 01 -->
+    <a href="marlet-clo.html" class="project-main reveal">
+      <div class="project-img">
+        <picture>
+          <source srcset="marlet-clo.webp" type="image/webp" />
+          <img
+            src="marlet-clo.jpg"
+            alt="Marlét Clo — Luxury streetwear Shopify store"
+            width="1920"
+            height="944"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="project-info">
+        <p class="project-num">01 / Featured</p>
+        <h3 class="project-name">Marlét Clo</h3>
+        <p class="project-desc">Luxury streetwear brand — debut headwear capsule drop with a dark, minimal, high-end aesthetic. Full Shopify store build with a bespoke theme tailored to the brand's identity.</p>
+        <div class="project-tags">
+          <span class="project-tag">Shopify</span>
+          <span class="project-tag">E-Commerce</span>
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">CSS</span>
+        </div>
+        <span class="project-link">View Case Study →</span>
+      </div>
+    </a>
+
+    <!-- Project 02 -->
+    <a href="https://matthewwright.studio" target="_blank" rel="noopener noreferrer" class="project-main reveal">
+      <div class="project-img project-img--self">
+        <div class="project-self-preview" aria-hidden="true">
+          <div class="psp-nav"><span>MW</span><span>—</span></div>
+          <div class="psp-title">MATTHEW<br/>WRIGHT</div>
+          <div class="psp-tags">
+            <span>Full-Stack</span>
+            <span>UI Design</span>
+            <span>E-Com</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-info">
+        <p class="project-num">02</p>
+        <h3 class="project-name">This Site</h3>
+        <p class="project-desc">Personal portfolio — designed and built from scratch with no framework. Dark monochrome aesthetic, custom scroll animations, and fully responsive layout across all breakpoints.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">UI Design</span>
+          <span class="project-tag">Vercel</span>
+        </div>
+        <span class="project-link">Visit Site →</span>
+      </div>
+    </a>
+
+    <!-- Project 03 -->
+    <a href="forma-studio.html" class="project-main reveal">
+      <div class="project-img project-img--self">
+        <div class="project-self-preview forma-preview" aria-hidden="true">
+          <div class="psp-nav"><span style="font-family:'Playfair Display',Georgia,serif;font-weight:400;letter-spacing:0.1em;font-size:0.95rem;color:#c9a84c;">Forma Studio</span><span style="color:rgba(201,168,76,0.3);">—</span></div>
+          <div class="forma-preview-title">SPACE THAT<br/>SAYS<br/>SOMETHING.</div>
+          <div class="psp-tags">
+            <span>Architecture</span>
+            <span>London</span>
+            <span>Est. 2016</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-info">
+        <p class="project-num">03</p>
+        <h3 class="project-name">Forma Studio</h3>
+        <p class="project-desc">Architecture & spatial design studio — a bespoke website built from scratch. Warm stone palette, editorial serif typography, and SVG architectural illustrations. No stock imagery, no templates.</p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">SVG</span>
+          <span class="project-tag">UI Design</span>
+        </div>
+        <span class="project-link">View Case Study →</span>
+      </div>
+    </a>
+
+    <!-- More Work Callout -->
+    <div class="more-work-banner">
+      <div class="more-work-text">
+        <p class="more-work-tag">More Work Available</p>
+        <h3 class="more-work-heading">Got a project in mind?<br />I've got more to show you.</h3>
+        <p class="more-work-desc">Not everything that's been built is live online. Get in touch and there's plenty more to show — templates, UI designs and past builds that aren't publicly hosted.</p>
+      </div>
+      <a href="#contact" class="more-work-cta">Get In Touch →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <!--
+    FORMSPREE: wired to https://formspree.io/f/mrpgrqwo (Portfolio Enquiry).
+    Until then, form action will not deliver. Mailto fallback:
+    matthewwright.studio@gmail.com
+  -->
+  <section id="contact" class="reveal">
+    <p class="section-label">Contact</p>
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-heading">Let's Work<br />Together</h2>
+        <p class="contact-note">Prefer to be contacted by message where possible.</p>
+      </div>
+      <div class="contact-items">
+        <div class="contact-row">
+          <span class="contact-type">Phone</span>
+          <a href="tel:07455840231" class="contact-val">07455840231</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-type">Email</span>
+          <a href="mailto:matthewwright.studio@gmail.com" class="contact-val">matthewwright.studio@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <form class="svc-form" action="https://formspree.io/f/mrpgrqwo" method="POST">
+        <div class="svc-form-row">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required autocomplete="name" />
+        </div>
+        <div class="svc-form-row">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required autocomplete="email" />
+        </div>
+        <div class="svc-form-row">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="4" required placeholder="Project brief…"></textarea>
+        </div>
+        <button type="submit" class="hero-cta svc-form-submit">Send message →</button>
+      </form>
+      <a href="services.html#enquire" class="contact-enquire-link">Full enquiry form &amp; packages →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Matthew Wright</span>
+    <span class="footer-copy">© 2026 matthewwright.studio</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
