@@ -1,0 +1,21 @@
+# Matthew Wright Studio
+> Full-stack developer and UI designer based in the Midlands, United Kingdom.
+
+- Site: https://matthewwright.studio
+- Email: matthewwright.studio@gmail.com
+- Phone: 07455840231
+- Instagram: @matthewwright.studio
+
+## Offers
+- Website builds: Starter £400–£700, Pro £700–£1,400, Premium £1,400–£2,800
+- Shopify Starter £600–£900, Shopify Custom £1,000–£1,800, WooCommerce £800–£1,600
+- UI design £300–£600, monthly maintenance £100–£250/mo
+
+## Work
+- Marlét Clo: luxury streetwear Shopify store — https://matthewwright.studio/marlet-clo.html
+- Forma Studio: architecture website demo — not a live client brand
+
+## Pages
+- [Home](https://matthewwright.studio/)
+- [Services & pricing](https://matthewwright.studio/services.html)
+- [Marlét Clo case study](https://matthewwright.studio/marlet-clo.html)
